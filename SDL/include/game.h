@@ -7,9 +7,9 @@
 class Game
 {
 public:
-	bool Initialize();
-	bool UpdateScreen();
-	void Close();
+	bool initialize();
+	bool updateScreen();
+	void close();
 
 private:
 	SDL_Window * window = nullptr;

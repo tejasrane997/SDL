@@ -1,17 +1,17 @@
-#include <Game.h>
+#include <game.h>
 
-bool Game::Initialize()
+bool Game::initialize()
 {
 	//Initialize SDL
 	if ( SDL_Init(SDL_INIT_EVERYTHING) != 0){
-		printf("SDL could not Initialized! SDL Error : %s\n", SDL_GetError());
+		printf("SDL could not Initialized! SDL Error : %s", SDL_GetError());
 		return false;
 	}
 
 	//Create windows
 	window = SDL_CreateWindow("GAME", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, 1000, 1000, SDL_WINDOW_SHOWN);
         if(!window){
-		printf("Failed to create window! SDL Error : %s\n", SDL_GetError());
+		printf("Failed to create window! SDL Error : %s", SDL_GetError());
 		return false;
 	}	
 
@@ -21,12 +21,12 @@ bool Game::Initialize()
 	return true;
 }
 
-bool Game::UpdateScreen()
+bool Game::updateScreen()
 {
 	//Load image
 	skySurface = SDL_LoadBMP("./content/blue.bmp");
 	if(!skySurface){
-		printf("Failed to load BMP! SDL Error : %s\n", SDL_GetError());
+		printf("Failed to load BMP! SDL Error : %s", SDL_GetError());
 		return false;
 	}
 
@@ -39,7 +39,7 @@ bool Game::UpdateScreen()
 	return true;
 }
 
-void Game::Close()
+void Game::close()
 {
 	//Free window surface
 	SDL_FreeSurface(screenSurface);

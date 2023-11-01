@@ -1,13 +1,13 @@
 
-#include "Game.h" 
+#include "game.h" 
  
 int main(int argc, char *argv[])
 {
 	Game newGame;
 
-	newGame.Initialize();
+	newGame.initialize();
 
-        newGame.UpdateScreen();
+        newGame.updateScreen();
  
     while (1)
         ;
